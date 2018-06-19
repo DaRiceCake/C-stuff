@@ -3,8 +3,6 @@ using System;
 namespace Ceasor_Cipher
 {
     class Ceasor_Func{
-        private string deword;
-        public string De_Word { get; set; }
         
         
         private char[] StrToArr(string Word)
@@ -18,16 +16,16 @@ namespace Ceasor_Cipher
             }
             return sout;
         }
-        public string Dcr (char[] De_Word){
-            string[] str = new 
+        public void Dcr (string Word){
+            char[] De_Word = new char[Word.Length];
+            De_Word=StrToArr(Word);
+            int[] castchr = new int[De_Word.Length];
             for(int i=0;i<28;i++){
-                foreach(char chr in De_Word){
-                    De_Word[]
+                for(int k = 0;k<De_Word.Length;k++){
+                    int tempint = De_Word[k] - i;
+                    Console.WriteLine((char)tempint);
                 }
             }
-
         }
     }
-
-
 }

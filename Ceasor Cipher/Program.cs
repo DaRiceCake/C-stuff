@@ -7,7 +7,7 @@ namespace Ceasor_Cipher
         static void Main(string[] args)
         {
             Ceasor_Func func = new Ceasor_Func();
-            
+            func.Dcr("Jack");
         }
     }
 }
