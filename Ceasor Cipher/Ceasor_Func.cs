@@ -6,6 +6,7 @@ namespace Ceasor_Cipher
         private string deword;
         public string De_Word { get; set; }
         
+        
         private char[] StrToArr(string Word)
         {
             int k=0;
