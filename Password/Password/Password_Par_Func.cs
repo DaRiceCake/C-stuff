@@ -43,11 +43,12 @@ namespace Password
                     flag = true;
                 }
             }
-            Console.WriteLine("Accepted");
-            
-            
+            Console.WriteLine("Accepted");   
         }
-
+        public void intset(string pass)
+        {
+            password = pass;
+        }
 
     } 
 }
