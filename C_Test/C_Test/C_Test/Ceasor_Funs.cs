@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
-namespace Ceasor_Cipher
+namespace C_Test
 {
     class Ceasor_Funs
     {
@@ -22,31 +22,33 @@ namespace Ceasor_Cipher
         }
         public void Dcr(string Word)
         {
-            char[] Outchr = new char[Word.Length];
+
             char[] De_Word = new char[Word.Length];
+            string currentchr = "";
             De_Word = StrToArr(Word);
             int[] castchr = new int[De_Word.Length];
             for (int i = 0; i < 28; i++)
             {
+                currentchr = "";
                 for (int k = 0; k < De_Word.Length; k++)
                 {
                     int tempint = De_Word[k] - i;
-                    Outchr[k] = (char)tempint;
+                    currentchr += (char)tempint;
                 }
-                Console.WriteLine("shift={0} word={1}", i , Outchr );
+                Console.WriteLine("Shift = {0} Word = {1}",i,currentchr);
             }
         }
-        public void Enc(string Word, int Shift)
+        public void Enc(string Word,int Shift)
         {
-            char Ec_Word = new char[Word.Length];
-            char Outchr = new char[Word.Length];
+            char[] Ec_Word = new char[Word.Length];
+            string curchr = "";
             Ec_Word = StrToArr(Word);
             for (int i = 0; i<Ec_Word.Length;i++)
             {
-                int tempint = Ec_Word[k];
-                Outchr[k] = (char)tempint;
+                int tempint = Ec_Word[i]+Shift;
+                curchr += (char)tempint;
             }
-            Console.Writeline(Outchr);
+            Console.WriteLine("Encrypted with shift {0} cipher text = {1}",Shift,curchr);
         }
 
     }
