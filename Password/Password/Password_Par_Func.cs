@@ -5,9 +5,23 @@ using System.Text;
 
 namespace Password
 {
+    public class PasswordIncorrectException : Exception
+    {
+        public PasswordIncorrectException()
+        {
+        }
+        public PasswordIncorrectException(string message)
+            : base(message)
+        {
+        }
+        public PasswordIncorrectException(string message, Exception inner)
+            : base(message)
+        {
+        }
+    } 
     class Password_Par_Func
     {
-        private string password = "test";
+        private string password="Test";
         public string Password
         {
             get { return password; }
@@ -19,7 +33,7 @@ namespace Password
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new PasswordIncorrectException();
                 }
 
             }
@@ -28,14 +42,14 @@ namespace Password
         {
             bool flag2 = false;
             bool flag = false;
-            while (flag == false)
+            do (flag == false)
             {
                 string att = Console.ReadLine();
                 flag2 = false;
                 try { Password = att; }
-                catch (ArgumentOutOfRangeException)
+                catch (PasswordIncorrectException)
                 {
-                    Console.WriteLine("Leo does not permit");
+                    Console.WriteLine("Leo does not permit");      
                     flag2 = true;
                 }
                 if (flag2 == false)
@@ -45,9 +59,9 @@ namespace Password
             }
             Console.WriteLine("Accepted");   
         }
-        public void intset(string pass)
+        public void Inset(string passent)
         {
-            password = pass;
+            password = passent;
         }
 
     } 
