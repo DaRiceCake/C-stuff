@@ -49,7 +49,7 @@ namespace Webbrowser
             // Add the browser to the Form
 
             panel2.Controls.Add (ChromeWebComp);
-            // Make the browser fill the form
+            // Make the browser fill the panel
             ChromeWebComp.Dock = DockStyle.Fill;
 
         }
