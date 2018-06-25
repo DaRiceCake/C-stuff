@@ -12,7 +12,8 @@ namespace Ceasor_Cipher
     {
         static void Main(string[] args)
         {
-            
+            Ceasor_Funs func = new Ceasor_Funs();
+            func.Dcr("KBDL");
         }
     }
 }
